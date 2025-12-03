@@ -1,0 +1,33 @@
+# Create proper .gitignore
+@"
+# Archives
+*.zip
+*.rar
+*.tar.gz
+*.7z
+
+# Dependencies
+node_modules/
+
+# Environment
+.env
+.env.local
+
+# Build
+dist/
+build/
+.next/
+out/
+
+# System
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+"@ | Out-File -FilePath .gitignore -Encoding UTF8
+
+# Commit it
+git add .gitignore
+git commit -m "Add .gitignore to prevent large files"
