@@ -1,0 +1,125 @@
+.cart-container{
+  width: 80%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.title ul{
+  display: flex;
+  margin-top: 100px;
+  justify-content: space-between;
+  gap: 20px;
+  list-style: none;
+  color: black;
+  font-weight: 600;
+  margin-bottom: 20px;
+  align-items: center;
+  text-align: center;
+}
+.cart-items ul{
+  list-style: none;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  margin-top: 10px;
+  justify-content: space-between;
+  color: black;
+  margin-bottom: 20px;
+}
+.cart-items ul li img{
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+}
+.remover{
+  font-size: large;
+  cursor: pointer;
+}
+.total-qunatiy-price{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 150px;
+}
+.cart-totals{
+  border: 2px solid tomato;
+  padding: 25px 30px;
+  border-radius: 5px;
+  width: 300px;
+  text-align: start;
+}
+.cart-totals h3{
+color: tomato;
+font-weight: 600;
+margin-bottom: 20px;
+font-size: 25px;
+}
+.cart-totals .total-details{
+  margin-bottom: 15px;
+ 
+}
+.cart-totals .total-details span{
+  font-weight: 500;
+  font-size: 18px;
+  color: rgb(39, 23, 23);
+
+}
+.total-details hr{
+  margin-top: 7px;
+  width: 160px;
+}
+.chck-btn{
+  background: tomato;
+  border-radius: 5px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  border: 2px solid rgb(236, 218, 24);
+  cursor: pointer;
+}
+.chck-btn:hover{
+  background: rgb(236, 218, 24);
+  color: tomato;
+  border: 2px solid tomato;
+}
+.promo-code{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: start;
+  margin-right: 20px; 
+}
+.promo-code h4{
+  font-weight: 500;
+  color: tomato;
+  font-size: 20px;
+}
+.prom-code-submit{
+  padding: 8px 10px;
+  border-radius: 5px;
+  justify-content: space-between;
+}
+.prom-code-submit .text{
+  width: 300px;
+  padding: 5px 10px;
+  border: none;
+  color: white;
+  font-weight: 500;
+  font-size: 20px;
+  border-radius: 5px;
+  background: rgb(83, 83, 101);
+  cursor: pointer;
+}
+.prom-code-submit .submit{
+  background: tomato;
+  border: none;
+  color: antiquewhite;
+  padding: auto;
+  padding: 5px 10px;
+   font-size: 20px;
+   border-radius: 5px;
+   cursor: pointer;
+}

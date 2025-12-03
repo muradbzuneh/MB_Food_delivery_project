@@ -1,0 +1,73 @@
+/* ======================================
+   Food Grid Card Container
+======================================= */
+.Food-grid {
+  padding: 10px 20px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+
+  border-radius: 20px;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden; /* Prevents image overflow */
+
+  transition: 0.3s ease;
+  background: #fff;
+}
+
+/* Hover Effect */
+.Food-grid:hover {
+  box-shadow: 5px 20px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ======================================
+   Food Image Wrapper
+======================================= */
+.food-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.descriotion {
+  margin-bottom: auto;
+}
+
+.descriotion p {
+  margin: 10px 0;
+  font-weight: 500;
+  color: rgb(19, 80, 132);
+  line-height: 1.4;
+}
+@media (max-width:450px) {
+  .Food-grid {
+  padding: 5px 10px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+ width: 130px;
+ height: 200px;
+}
+
+
+.food-img img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+.descriptions {
+  margin-bottom: auto;
+}
+.descriotion {
+  margin: 10px 0;
+  font-weight: 500;
+  color: rgb(19, 80, 132);
+  line-height: 1.4;
+}
+  
+}

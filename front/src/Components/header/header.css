@@ -1,0 +1,99 @@
+/* ================================
+   Hero Section Container
+=================================== */
+.container {
+  height: 50vw;
+  margin: 30px auto;
+  background: url('./Logo2.jpg') no-repeat center/cover;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 8px;
+  position: relative;
+}
+.main-container {
+  padding-left: 20px;
+  padding-top: 100px;
+  margin-left: 30px;
+ display: flex;
+ flex-direction: column;
+ max-width: 500px;
+  gap: 20px;
+}
+.head-title h1 {
+  font-size: 35px;
+  color:tomato;
+  margin-bottom: 10px;
+}
+p{
+  color: aliceblue;
+  font-size: 20px;
+}
+.explorer {
+  background: tomato;
+  border-radius: 10px;
+  max-width: 150px;
+  text-align: center;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  border: 1px solid white;
+ 
+}
+
+.explorer:hover {
+  background: red;
+  color: white;
+  border-color: wheat;
+}
+
+.explorer button {
+  padding: 8px 20px;
+  color: white;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+@media (max-width:450px) {
+  .container {
+    height: auto;      
+    margin: 8px auto;
+    align-items: center;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;   
+  }
+
+  .main-container {
+    padding-left: 10px;
+    padding-top: 10px;
+    margin-left: 0; 
+    margin-top: 20px;     
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;      
+    gap: 5px;
+  }
+
+  .head-title h1 {
+    font-size: 15px;
+    color: tomato;
+    margin-bottom: 10px;
+  }
+
+  p {
+    display: none;
+  }
+
+  .explorer {
+    border-radius: 3px;
+    max-width: 50px;
+    margin-top: 10px;
+  }
+
+  .explorer button {
+    padding: 2px;
+    font-size: 10px;
+  }
+}

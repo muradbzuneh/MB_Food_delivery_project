@@ -1,0 +1,175 @@
+*{
+  padding: 0;
+
+}
+.navbar{
+  background: rgb(192, 187, 187);
+  width: 100%;
+  display: flex;
+  padding: 0 20px;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+.right-section img{
+ width: 65px;
+ display: block;
+ cursor: pointer;
+ background: transparent;
+ border-radius: 100px;
+}
+.middle-section-nav ul{
+  display: flex;
+  list-style: none;
+  font-size: 18px;
+  text-align: center;
+  gap: 25px;
+  font-family: 500;
+  cursor: pointer;
+}
+.middle-section-nav .Active{
+  border-bottom: 2px solid tomato;
+  padding-bottom: 4px;
+}
+.right-sction-nav{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.search-icon{
+  background: white;
+  width: 40px;
+  border-radius: 5px;
+}
+.search-icon img{
+  width: 30px;
+  padding: 5px  0 5px 10px;
+  cursor: pointer;
+}
+.search-icon:hover{
+  background: tomato
+}
+.cart-icon{
+  background-color: white;
+  padding:5px 10px;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+.cart-icon img{
+width: 20px;
+}
+.cart-icon .cart-quantiy{
+  position: absolute;
+  background-color: tomato;
+  min-width: 15px;
+  min-height: 15px;
+  border-radius: 5px; 
+  top: -2px;
+  right: -2px;
+}
+.cart-quantiy p{
+  color: white;
+  text-align: center;
+  font-size: small;
+}
+.cart-icon:hover{
+  background:  tomato;
+}
+
+.sign-up-section:hover{
+  background: tomato
+}
+.sign-up-section {
+  background: white;
+  padding: 7px 10px;
+  border-radius: 5px;
+
+}
+.sign-up-section button{
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 500;
+}
+.username {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  margin-right: 15px;
+}
+@media (max-width:450px) {
+
+  .navbar {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+    padding: 5px 10px;
+    justify-content: space-between;
+    height: auto;          /* FIXED */
+    align-items: center;
+  }
+
+  .right-section img {
+    width: 20px;
+  }
+
+  .middle-section-nav ul {
+    font-size: 10px;       /* FIXED */
+    gap: 5px;
+    text-align: center;
+  }
+
+  .middle-section-nav .Active {
+    border-bottom: 1px solid tomato;
+    padding-bottom: 2px;
+    width: auto;           /* FIXED */
+  }
+
+  .search-icon {
+    width: 18px;
+    border-radius: 45px;
+    text-align: center;
+  }
+
+  .search-icon img {
+    width: 12px;
+  }
+
+  .cart-icon {
+    position: relative;    /* FIXED */
+  }
+
+  .cart-icon img {
+    width: 16px;
+  }
+
+  .cart-icon .cart-quantiy {
+    position: absolute;
+    min-width: 12px;
+    min-height: 12px;
+    border-radius: 50%;
+    top: -5px;             /* FIXED */
+    right: -5px;           /* FIXED */
+    background: tomato;
+  }
+
+  .cart-quantiy p {
+    color: white;
+    text-align: center;
+    font-size: 8px;
+  }
+
+  .sign-up-section {
+    padding: 2px 4px;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+  .sign-up-section button {
+    font-size: 10px;
+    font-weight: 500;
+  }
+}
