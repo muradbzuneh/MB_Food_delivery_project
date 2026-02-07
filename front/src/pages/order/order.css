@@ -23,11 +23,19 @@ margin-bottom: 10px;
 border: 1px solid tomato;
 padding: 5px 10px;
 }
-.city-info select, .payment-method select{
-  font-size: 20px;
+.city-info input{
+  padding: 5px 10px;
+  outline-color: tomato;
   background: rgb(222, 222, 227);
-  border: none;
+  border: 1px solid tomato;
   border-radius: 8px;
+  padding: 5px 10px;
   margin-bottom: 10px;
-  color: rgb(232, 104, 19);
+}
+#phone{
+  width: 90%;
+  outline-color: tomato;
+  border: 1px solid tomato;
+  padding: 5px 10px;
+  margin: 10px 0;
 }

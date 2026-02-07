@@ -25,15 +25,12 @@ const OrderPage = () => {
           <input type="text" placeholder='Enter Your Address'/>
           </div>
           <div className="city-info">
-            <select name="country" id=" Ethiopia" >
-              <option value="Ethiopia"> Ethiopia</option>
-              <option value="kenya"> kenya</option>
-              <option value="usa"> usa</option>
-              <option value="UAE"> UAE</option>
-              <option value="Suadi"> Suadia Arebia</option>
-              <option value="Ethiopia"> Canada</option>
-            </select>
+         <input type="text" placeholder='city' />
+         <input type="text" name="" id="" placeholder='state'/>
+         <input type="text" placeholder='Zip code' />
+         <input type="text" name="" id="" placeholder='country' />
             </div>
+            <input type="text" name="" id="phone" placeholder='phone'/>
             <input type="submit" className='chck-btn' />
         </div>
       </form>
