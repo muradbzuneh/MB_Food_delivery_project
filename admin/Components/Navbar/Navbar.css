@@ -1,0 +1,32 @@
+.Navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px;
+    color: #fff;
+    width: 100%;
+    height:80px;
+    margin: 20px 10px;
+}
+.left-side{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+.left-side img, .right-side img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.left-side h1{
+    margin: 0;
+    font-size: 14px;
+    color: black;
+}
+.right-side{
+    padding-right: 10px;
+    background: transparent;
+}

@@ -1,0 +1,26 @@
+.side-bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 10px;
+    color: #140808;
+    width: 200px;
+    height:100vh;
+    border: 1px solid #ccc;
+    border-top: 0;
+}
+.options{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.option{
+    align-items: center;
+    
+}
+@media (max-widith:900px) {
+    .option p{
+        display: none;
+    }
+}
