@@ -1,16 +1,29 @@
 import './App.css'
 import Navbar from '../Components/Navbar/Navbar'
 import Sidebar from '../Components/Sidebar/Sidebar'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Add from '../pages/add/add'
+import List from '../pages/list/list'
+import Orders from '../pages/orders/Orders'
 
 function App() {
   
 
   return (
     <>
-      
-        <Navbar />
-        <Sidebar />
-      
+      <div className='app'> 
+           <Navbar />
+        <hr />
+        <div>
+          <Sidebar />
+             <Routes>
+            <Route path='/add' element={<Add />} />
+             <Route path='/list' element={<List/>} />
+              <Route path='/orders' element={<Orders />} />
+          </Routes> 
+        </div>
+      </div>
+        
     </>
   )
 }
