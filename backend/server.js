@@ -12,6 +12,7 @@ app.use(cors());
 connectDB();
 // Sample route
 app.use('/api/foods', foodRoutes); 
+app.use('/images', express.static('uploads')); // Serve uploaded images
 app.get('/', (req, res) => {
     res.send('Welcome to the Food Delivery API!');
 });

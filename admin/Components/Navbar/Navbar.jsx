@@ -13,7 +13,6 @@ const Navbar = () => {
         <div className='right-side'>
              <img src={assets.profile} alt="profile" />
         </div>
-
     </div>
     </>
   

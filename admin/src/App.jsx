@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Add from '../pages/add/add'
 import List from '../pages/list/list'
 import Orders from '../pages/orders/Orders'
-
+  import { ToastContainer } from 'react-toastify';
 function App() {
   
 
@@ -13,8 +13,9 @@ function App() {
     <>
       <div className='app'> 
            <Navbar />
+            <ToastContainer />
         <hr />
-        <div>
+        <div className='app-container'>
           <Sidebar />
              <Routes>
             <Route path='/add' element={<Add />} />
