@@ -20,7 +20,7 @@ const url = 'http://localhost:3000'
   }
 
   const onSubmitHandler = async (e) => {
-    e.preventDefault()
+   
 
     if (!image) {
       alert('Please upload an image')
@@ -51,6 +51,7 @@ const url = 'http://localhost:3000'
       console.error(error)
       toast.error('Error adding product ❌')
     }
+ e.preventDefault()
   }
 
   return (

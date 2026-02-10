@@ -3,22 +3,30 @@ import Food from "../models/FoodModel.js";
 import fs from 'fs';
 import path from 'path';
 
- const addFood = async (req, res) => {    
-    let image = req.file ? req.file.path : null;
-    const food = mongoose.model("Food", Food.schema);
-    try {
-        const newFood = new food({
-            name: req.body.name,
-            description: req.body.description,
-            price: req.body.price,
-            image: image,
-            category: req.body.category
-        });
-        await newFood.save();
-        res.status(201).json({ message: "Food added successfully", food: newFood });
-    } catch (error) {
-        res.status(500).json({ message: "Error adding food", error: error.message });
-    }
+ const addFood = async (req, res) => {
+  const image = req.file ? req.file.filename : null;
+  const Food = mongoose.model("Food", Food.schema);
+
+  try {
+    const newFood = new Food({
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      image: image,
+      category: req.body.category
+    });
+
+    await newFood.save();
+    res.status(201).json({
+      message: "Food added successfully",
+      food: newFood
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Error adding food",
+      error: error.message
+    });
+  }
 };
 const getAllFood = async (req, res) => {
     try {

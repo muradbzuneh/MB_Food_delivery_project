@@ -4,7 +4,7 @@ import './FoodItem.css'
 import { assets} from '../../assets/assets'
 import { StoreContext } from '../context/StoreContext'
 
-export const FoodItem = ( {id, img, description, price, name} ) => {
+export const FoodItem = ( {id, img, description, price, name},  ) => {
   const [showAdded, setShowAdded] = useState(false);
   const {cartItems, AddtoCart, removeFromCart} = useContext (StoreContext);
 
@@ -22,7 +22,7 @@ export const FoodItem = ( {id, img, description, price, name} ) => {
          <div className="food-items">
                <div  className="Food-grid">
                  <div className="food-img">
-                   <img src={img} alt="" />  
+                   <img src={`http://localhost:3000/images/${img}`} alt="" /> 
                  </div>
                     {!cartItems[id]?
                       <img className ="counter"src={assets.add_icon_white} onClick={() => AddtoCart(id)} alt="Add to cart" />

@@ -1,6 +1,6 @@
 import { getAuth } from "firebase/auth";
 
-export const API_URL = "http://localhost:3000/api";
+const API_URL = "http://localhost:3000/api";
 
 export const fetchWithAuth = async (endpoint, options = {}) => {
   const auth = getAuth();

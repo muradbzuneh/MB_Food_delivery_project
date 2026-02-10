@@ -1,16 +1,37 @@
-import { createContext, useState} from "react";
-import { food_list, menu_list } from "../../assets/assets"; 
+import { createContext, useEffect, useState} from "react";
+import {  menu_list } from "../../assets/assets"; 
 import { assets } from "../../assets/assets";
+import {API_URL} from "../../services/api.js"
 
 export const StoreContext = createContext();
 
 const StoreContextProvider = (props)=>{
 const [cartItems, setCartItems] = useState ({});
+const [foodList, setFoodList] = useState([]);
 
-const productPrice = food_list.reduce((total, item) => {
+const fetchFoodList = async () => {
+  try {
+    const response = await fetch(`${API_URL}/foods/all`);
+    if (!response.ok) {
+      throw new Error("Failed to fetch food list");
+    }
+    const data = await response.json();
+    setFoodList(data);
+  }
+  catch (error) {
+    console.error("Error fetching food list:", error);
+  }
+  
+};
+
+useEffect(() => {
+  fetchFoodList();
+}, []);
+
+const productPrice = foodList.reduce((total, item) => {
                 return total + item.price * (cartItems[item._id] || 0);
               }, 0).toFixed(2);
-  const DeliveryFee =  (food_list.reduce((total, item) => {
+  const DeliveryFee =  (foodList.reduce((total, item) => {
                 return total + item.price * (cartItems[item._id] || 0);
               }, 0).toFixed(2) <50 ? 0 : 5.00).toFixed(2); 
   const TotalPrice = (Number(DeliveryFee) + Number(productPrice)).toFixed(2);
@@ -42,7 +63,7 @@ const AddtoCart = (itemId)=>{
 
   const contextValue ={
   menu_list,
-  food_list,
+  foodList,
   assets,
   cartItems,
   AddtoCart,

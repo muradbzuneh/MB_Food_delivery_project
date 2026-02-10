@@ -3,14 +3,14 @@ import { StoreContext } from '../context/StoreContext'
 import {  FoodItem } from './FoodItem.jsx'
 import { useContext} from "react";
 const FoodDisplay = ({category}) => {
-const { food_list } = useContext(StoreContext);
+const { foodList } = useContext(StoreContext);
 
 return ( 
   <>
     <div className="food-items" id= "Food">
       <h1>Top dishes Near you</h1>
       <div className="food-grid-display">
-        {food_list
+        {foodList  
           .filter((item) => 
             category === "All" || item.category === category
           )

@@ -5,10 +5,19 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Add from '../pages/add/add'
 import List from '../pages/list/list'
 import Orders from '../pages/orders/Orders'
-  import { ToastContainer } from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
+import { fetchWithAuth } from "../services/api.js";
 function App() {
-  
 
+async function registerAdmin() {
+await fetchWithAuth("/admin/register", {
+  method: "POST",
+  body: JSON.stringify({
+    adminSecret: "mb-food-admin-2026",
+  }),
+});
+}
+registerAdmin();
   return (
     <>
       <div className='app'> 
