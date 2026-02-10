@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 import Food from "../models/FoodModel.js";
 import fs from 'fs';
+import path from 'path';
 
  const addFood = async (req, res) => {    
     let image = req.file ? req.file.path : null;
@@ -64,17 +65,36 @@ const updateFood = async (req, res) => {
     }
 };
 const deleteFood = async (req, res) => {
-    try {
-        const food = mongoose.model("Food", Food.schema);
-        const deletedFood = await food.findByIdAndDelete(req.params.id);    
-        if (!deletedFood) {
-            return res.status(404).json({ message: "Food not found" });
-        }
-        fs.unlink(`uploads/${deletedFood.image}`, () => {});
-        res.status(200).json({ message: "Food deleted successfully" });
-    } catch (error) {
-        res.status(500).json({ message: "Error deleting food", error: error.message });
+  try {
+    const deletedFood = await Food.findByIdAndDelete(req.params.id)
+
+    if (!deletedFood) {
+      return res.status(404).json({ success: false, message: 'Food not found' })
     }
-};
+
+    // Image path
+    const imagePath = path.join('uploads', deletedFood.image)
+
+    // Delete image if it exists
+    fs.access(imagePath, fs.constants.F_OK, (err) => {
+      if (!err) {
+        fs.unlink(imagePath, (unlinkErr) => {
+          if (unlinkErr) console.error('Image delete error:', unlinkErr)
+        })
+      }
+    })
+
+    res.status(200).json({
+      success: true,
+      message: 'Food deleted successfully'
+    })
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: 'Error deleting food',
+      error: error.message
+    })
+  }
+}
 
 export { addFood, getAllFood, singleFood, updateFood, deleteFood };       

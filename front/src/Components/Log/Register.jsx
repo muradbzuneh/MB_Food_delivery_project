@@ -2,6 +2,9 @@ import { useState } from "react";
 import './log.css'
 import { auth, db } from "../../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { fetchWithAuth } from "../../services/api.js";
+
+
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
@@ -26,6 +29,9 @@ function Register() {
 
       alert("Registered successfully!");
       navigate("/");
+      await fetchWithAuth("/auth/sync", {
+  method: "POST",
+});
     } catch (err) {
       alert(err.message);
     }

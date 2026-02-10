@@ -14,6 +14,6 @@ router.post('/add', upload.single('image'), addFood);
 router.get('/all', getAllFood);
 router.get('/:id', singleFood);
 router.put('/update/:id', upload.single('image'), updateFood);
-router.delete('/delete/', deleteFood);
+router.delete('/delete/:id', deleteFood);
 
 export default router; 

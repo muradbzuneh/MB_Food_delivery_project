@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { auth } from "../../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import {fetchWithAuth} from "../../services/api.js"
 import './log.css'
 import { useNavigate } from "react-router-dom";
 
@@ -15,6 +16,9 @@ function Login() {
       await signInWithEmailAndPassword(auth, email, password);
       alert("Login successful!");
       navigate("/homepage"); // redirect to homepage
+      await fetchWithAuth("/auth/sync", {
+    method: "POST",
+  });
     } catch (err) {
       alert(err.message);
     }

@@ -1,5 +1,5 @@
-import{ useState, React} from 'react'
-
+import{ useState, React, useEffect} from 'react'
+import  {getAuth} from "firebase/auth"
 import Header from '../../Components/header/Header'
 import ExploreMenu from '../../Components/ExploreMenu/ExploreMenu'
 import FoodDisplay from '../../Components/ExploreMenu/FoodDisplay'
@@ -8,7 +8,15 @@ import Footer from '../../Components/Footer/footer'
 
 const HomePage = () => {
  const [category, setCategory] = useState("All")
-  
+ useEffect(() => {
+  const auth = getAuth();
+
+  if (auth.currentUser) {
+    auth.currentUser.getIdToken().then((token) => {
+      console.log("🔥 Firebase Token:", token);
+    });
+  }
+}, []);
   return (
     <div>
       <Navbar />
