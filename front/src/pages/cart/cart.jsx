@@ -9,7 +9,7 @@ import Footer from '../../Components/Footer/footer';
 
 
 const Cart = () => {
-  const { food_list, cartItems, removeFromCart,productPrice, DeliveryFee,
+  const { foodList, cartItems, removeFromCart,productPrice, DeliveryFee,
   TotalPrice} = useContext(StoreContext);
    const navigate = useNavigate();       
 
@@ -29,14 +29,14 @@ const Cart = () => {
       </div>
       <hr />
       <div className="cart-items">
-         {food_list.map((item, key) => {
+         {foodList.map((item, key) => {
           if (cartItems[item._id] > 0)  
            
             return (
                <div key={key} className="cart-items-contents">
               <ul >
                 <li>
-                  <img src={item.image} alt={item.name}
+                  <img src={`http://localhost:3000/images/${item.image}`} alt={item.name}
                   />
                 </li>
                 <li>{item.name}</li>

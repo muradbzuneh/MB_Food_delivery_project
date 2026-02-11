@@ -108,11 +108,15 @@ const url = 'http://localhost:3000'
               name="category"
               value={data.category}
               onChange={onChangeHandler}
-            >  <option value="appetizer">Rolls</option>
-              <option value="pizza">Pizza</option>
-              <option value="salad">Salad</option>
-              <option value="burger">Burgers</option>
-              <option value="dessert">Dessert</option>
+            >  <option value="Rolls">Rolls</option>
+              <option value="Pizza">Pizza</option>
+              <option value="Salad">Salad</option>
+              <option value="Sandwich">Sandwich</option>
+              <option value="Deserts">Deserts</option>
+              <option value="Cake">Cake</option>
+              <option value="Pure Veg">Pure Veg</option>
+              <option value="Pasta">Pasta</option>
+              <option value="Noodles">Noodles </option>
             </select>
           </div>
 

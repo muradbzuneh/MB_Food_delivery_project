@@ -6,7 +6,7 @@ const Footer = () => {
     <div className='footer-container ' id='Contact'>
       <div className="containerd">
         <div className="right-section-footer">
-         <img src="logo.jpg" alt="" />
+         <img src="Moseb.jpg" alt="" />
          <div className="text-area">
           <p>
       Fast, fresh, and reliable food delivery—enjoy your favorite meals anytime, delivered with care.

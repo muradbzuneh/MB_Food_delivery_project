@@ -5,6 +5,7 @@ import foodRoutes from './routes/foodRoutes.js';
 import testRoute from "./routes/taseRoute.js";
 import authRoutes from "./routes/auth.js";
 import adminRoutes from "./routes/admin.js";
+import cartRoutes from "./routes/cartRoutes.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,6 +20,7 @@ app.use('/images', express.static('uploads')); // Serve uploaded images
 app.use("/api/test", testRoute);
 app.use("/api/auth", authRoutes);
 app.use("/api/admin", adminRoutes);
+app.use("/api/cart", cartRoutes);
 app.get('/', (req, res) => {
     res.send('Welcome to the Food Delivery API!');
 });

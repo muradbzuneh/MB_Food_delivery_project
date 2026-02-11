@@ -23,6 +23,7 @@ margin: auto;
   cursor: pointer;
   background: transparent;
   border-radius: 100px;
+  border: 1px solid tomato;
 }
 .right-section-footer p{
   margin-top: 10px;

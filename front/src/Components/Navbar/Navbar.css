@@ -19,6 +19,7 @@
  cursor: pointer;
  background: transparent;
  border-radius: 100px;
+ border: 2px solid tomato;
 }
 .middle-section-nav ul{
   display: flex;

@@ -1,108 +1,135 @@
-import mongoose from "mongoose";
 import Food from "../models/FoodModel.js";
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
 
- const addFood = async (req, res) => {
-  const image = req.file ? req.file.filename : null;
-  const Food = mongoose.model("Food", Food.schema);
-
+/* ================= ADD FOOD ================= */
+const addFood = async (req, res) => {
   try {
+    const image = req.file ? req.file.filename : null;
+
     const newFood = new Food({
       name: req.body.name,
       description: req.body.description,
       price: req.body.price,
       image: image,
-      category: req.body.category
+      category: req.body.category,
     });
 
     await newFood.save();
+
     res.status(201).json({
-      message: "Food added successfully",
-      food: newFood
-    });
-  } catch (error) {
-    res.status(500).json({
-      message: "Error adding food",
-      error: error.message
-    });
-  }
-};
-const getAllFood = async (req, res) => {
-    try {
-        const food = mongoose.model("Food", Food.schema);
-        const foods = await food.find();
-        res.status(200).json(foods);
-    } catch (error) {
-        res.status(500).json({ message: "Error fetching food", error: error.message });
-    }
-};
-const  singleFood = async (req, res) => {
-    try {
-        const food = mongoose.model("Food", Food.schema);
-        const foodItem = await food.findById(req.params.id);
-        if (!foodItem) {
-            return res.status(404).json({ message: "Food not found" });
-        }
-        res.status(200).json(foodItem);
-    } catch (error) {
-        res.status(500).json({ message: "Error fetching food", error: error.message });
-    }
-};
-const updateFood = async (req, res) => {
-    let image = req.file ? req.file.path : null;
-    try {
-        const food = mongoose.model("Food", Food.schema);
-        const updatedFood = await food.findByIdAndUpdate(
-            req.params.id,
-            {
-                name: req.body.name,
-                description: req.body.description,
-                price: req.body.price,
-                image: image,
-                category: req.body.category
-            },
-            { new: true }
-        );
-        if (!updatedFood) {
-            return res.status(404).json({ message: "Food not found" });
-        }
-        res.status(200).json(updatedFood);
-    } catch (error) {
-        res.status(500).json({ message: "Error updating food", error: error.message });
-    }
-};
-const deleteFood = async (req, res) => {
-  try {
-    const deletedFood = await Food.findByIdAndDelete(req.params.id)
-
-    if (!deletedFood) {
-      return res.status(404).json({ success: false, message: 'Food not found' })
-    }
-
-    // Image path
-    const imagePath = path.join('uploads', deletedFood.image)
-
-    // Delete image if it exists
-    fs.access(imagePath, fs.constants.F_OK, (err) => {
-      if (!err) {
-        fs.unlink(imagePath, (unlinkErr) => {
-          if (unlinkErr) console.error('Image delete error:', unlinkErr)
-        })
-      }
-    })
-
-    res.status(200).json({
       success: true,
-      message: 'Food deleted successfully'
-    })
+      message: "Food added successfully",
+      food: newFood,
+    });
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: 'Error deleting food',
-      error: error.message
-    })
+      message: "Error adding food",
+      error: error.message,
+    });
   }
-}
+};
 
-export { addFood, getAllFood, singleFood, updateFood, deleteFood };       
+/* ================= GET ALL ================= */
+const getAllFood = async (req, res) => {
+  try {
+    const foods = await Food.find();
+    res.status(200).json(foods);
+  } catch (error) {
+    res.status(500).json({
+      message: "Error fetching food",
+      error: error.message,
+    });
+  }
+};
+
+/* ================= SINGLE FOOD ================= */
+const singleFood = async (req, res) => {
+  try {
+    const foodItem = await Food.findById(req.params.id);
+
+    if (!foodItem) {
+      return res.status(404).json({ message: "Food not found" });
+    }
+
+    res.status(200).json(foodItem);
+  } catch (error) {
+    res.status(500).json({
+      message: "Error fetching food",
+      error: error.message,
+    });
+  }
+};
+
+/* ================= UPDATE FOOD ================= */
+const updateFood = async (req, res) => {
+  try {
+    const image = req.file ? req.file.filename : undefined;
+
+    const updateData = {
+      name: req.body.name,
+      description: req.body.description,
+      price: req.body.price,
+      category: req.body.category,
+    };
+
+    // Only update image if new one uploaded
+    if (image) {
+      updateData.image = image;
+    }
+
+    const updatedFood = await Food.findByIdAndUpdate(
+      req.params.id,
+      updateData,
+      { new: true }
+    );
+
+    if (!updatedFood) {
+      return res.status(404).json({ message: "Food not found" });
+    }
+
+    res.status(200).json(updatedFood);
+  } catch (error) {
+    res.status(500).json({
+      message: "Error updating food",
+      error: error.message,
+    });
+  }
+};
+
+/* ================= DELETE FOOD ================= */
+const deleteFood = async (req, res) => {
+  try {
+    const deletedFood = await Food.findByIdAndDelete(req.params.id);
+
+    if (!deletedFood) {
+      return res.status(404).json({
+        success: false,
+        message: "Food not found",
+      });
+    }
+
+    // Delete image file
+    if (deletedFood.image) {
+      const imagePath = path.join("uploads", deletedFood.image);
+
+      if (fs.existsSync(imagePath)) {
+        fs.unlinkSync(imagePath);
+      }
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Food deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Error deleting food",
+      error: error.message,
+    });
+  }
+};
+
+export { addFood, getAllFood, singleFood, updateFood, deleteFood };

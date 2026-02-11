@@ -22,7 +22,7 @@ const navigate = useNavigate();
   return (
     <div className="navbar">
       <div className="right-section">
-        <Link to='/'><img className='logo' src= 'logo.jpg' alt="" /></Link>
+        <Link to='/'><img className='logo' src= 'Moseb.jpg' alt="" /></Link>
   
       </div>
       <div className="middle-section-nav">
