@@ -6,11 +6,14 @@ import testRoute from "./routes/taseRoute.js";
 import authRoutes from "./routes/auth.js";
 import adminRoutes from "./routes/admin.js";
 import cartRoutes from "./routes/cartRoutes.js";
+ 
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: "*"
+}));
 
 // Import and connect to the database
 connectDB();
