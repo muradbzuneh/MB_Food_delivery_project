@@ -3,7 +3,7 @@ import  {getAuth} from "firebase/auth"
 import Header from '../../Components/header/Header'
 import ExploreMenu from '../../Components/ExploreMenu/ExploreMenu'
 import FoodDisplay from '../../Components/ExploreMenu/FoodDisplay'
-import Navbar from '../../Components/navbar/navbar'
+import Navbar from '../../Components/navbar/Navbar.jsx'
 import Footer from '../../Components/Footer/footer'
 
 const HomePage = () => {
