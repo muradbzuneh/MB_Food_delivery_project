@@ -1,4 +1,4 @@
-import './app.css'
+import './App.css'
 import HomePage from './pages/home/homePage.jsx'
 import { Routes, Route, Navigate} from 'react-router-dom'
 import Register from './Components/Log/Register.jsx'
