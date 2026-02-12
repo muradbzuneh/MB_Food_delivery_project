@@ -1,6 +1,6 @@
 import React from 'react'
 import './order.css'
-import Navbar from '../../Components/navbar/navbar';
+import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/footer';
 import { useContext } from 'react'
 import { StoreContext } from '../../Components/context/StoreContext'

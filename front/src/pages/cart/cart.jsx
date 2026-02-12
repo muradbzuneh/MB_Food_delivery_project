@@ -3,7 +3,7 @@ import './cart.css'
 import { useContext } from 'react'
 import { StoreContext } from '../../Components/context/StoreContext'
 import { useNavigate } from "react-router-dom";
-import Navbar from '../../Components/navbar/navbar';
+import Navbar from '../../Components/Navbar/Navbar';
 import Footer from '../../Components/Footer/footer';
 
 
