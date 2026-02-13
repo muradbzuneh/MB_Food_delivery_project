@@ -22,7 +22,7 @@ export const FoodItem = ( {id, img, description, price, name},  ) => {
          <div className="food-items">
                <div  className="Food-grid">
                  <div className="food-img">
-                   <img src={`http://localhost:3000/images/${img}`} alt="" /> 
+                   <img src={`https://mb-food-delivery-project.onrender.com/images/${img}`} alt="" /> 
                  </div>
                     {!cartItems[id]?
                       <img className ="counter"src={assets.add_icon_white} onClick={() => AddtoCart(id)} alt="Add to cart" />

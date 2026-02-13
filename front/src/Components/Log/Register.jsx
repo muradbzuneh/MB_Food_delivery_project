@@ -1,10 +1,8 @@
 import { useState } from "react";
-import './log.css'
+import './Log.css'
 import { auth, db } from "../../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { fetchWithAuth } from "../../services/api.js";
-
-
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 

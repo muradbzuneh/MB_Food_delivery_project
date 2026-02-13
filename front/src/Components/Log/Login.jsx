@@ -2,7 +2,7 @@ import { useState } from "react";
 import { auth } from "../../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import {fetchWithAuth} from "../../services/api.js"
-import './log.css'
+import './Log.css'
 import { useNavigate } from "react-router-dom";
 
 function Login() {
