@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState } from "react"; 
 import './Log.css'
 import { auth, db } from "../../../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
