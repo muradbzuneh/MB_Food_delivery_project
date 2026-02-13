@@ -15,7 +15,7 @@ This project includes:
  🌍 Live Demo
 
 - 🔗 Frontend: https://your-frontend.vercel.app
-- 🔗 Admin Panel: https://your-admin.vercel.app
+- 🔗 Admin Panel:(https://mb-food-delivery-project-8w5x.vercel.app/)
 - 🔗 Backend API: https://your-backend.onrender.com
 
 ---
