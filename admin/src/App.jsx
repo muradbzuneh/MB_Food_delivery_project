@@ -1,10 +1,10 @@
 import './App.css'
 import Navbar from '../Components/Navbar/Navbar'
-import Sidebar from '../Components/Sidebar/Sidebar'
+import Sidebar from '../Components/Sidebar/Sidebar.jsx'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Add from '../pages/add/add'
-import List from '../pages/list/list'
-import Orders from '../pages/orders/Orders'
+import Add from '../pages/add/Add'
+import List from '../pages/list/list.jsx'
+import Orders from '../pages/orders/orders.jsx'
 import { ToastContainer } from 'react-toastify';
 import { fetchWithAuth } from "../services/api.js";
 function App() {

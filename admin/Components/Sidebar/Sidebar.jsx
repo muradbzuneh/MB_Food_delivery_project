@@ -1,5 +1,5 @@
 import React from 'react'
-import './Sidebar.css'
+import './sidebar.css'
 import { assets } from '../../assets/assest.js'
 import { useNavigate } from 'react-router-dom'
 

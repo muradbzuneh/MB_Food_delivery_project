@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './List.css'
+import './list.css'
 import axios from 'axios'
 
 const url = 'http://localhost:3000'
